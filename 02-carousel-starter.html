@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel Component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /*
+      MAIN COLOR: #087f5b
+      GREY COLOR: #343a40
+      */
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "IM Fell English", sans-serif;
+        color: #343a40;
+        line-height: 1;
+      }
+
+      .carousel {
+        background-color: blueviolet;
+        margin: 100px auto;
+        width: 800px;
+        padding: 32px;
+        padding-left: 86px;
+        padding-right: 48px;
+        color: aliceblue;
+        position: relative;
+        border-radius: 16px;
+        box-shadow: 0 24px 36px rgba(0, 0, 0, 0.25);
+
+        /* flex */
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        gap: 86px;
+      }
+
+      img {
+        height: 250px;
+        transform: scale(1.5);
+        border-radius: 8px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+      }
+
+      .btn {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        border-radius: 24px;
+        border: none;
+        /* box-shadow: 0 12px 0px rgba(0, 0, 0, 0.01); */
+        top: 50%;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .btn-l {
+        left: 0;
+        transform: translate(-50%, -50%);
+      }
+
+      .btn-r {
+        right: 0;
+        transform: translate(50%, -50%);
+      }
+
+      .btn-icon {
+        stroke: blueviolet;
+        width: 32px;
+        height: 32px;
+      }
+
+      .quote-text {
+        font-size: 18px;
+        font-weight: 500px;
+        line-height: 1.5;
+        margin-bottom: 32px;
+      }
+
+      .quote-author {
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+
+      .quote-job {
+        font-size: 12px;
+      }
+
+      .dots {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 360%);
+        display: flex;
+        justify-content: center;
+        gap: 21px;
+        align-items: center;
+      }
+
+      .dot {
+        height: 12px;
+        width: 12px;
+        background-color: white;
+        border: 2px solid blueviolet;
+        border-radius: 50%;
+      }
+
+      .open {
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <img src="./IMG_0171.JPG" alt="SwordArtOnline" />
+      <blockquote class="quote">
+        <p class="quote-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias hic
+          molestias exercitationem, magni earum veniam totam impedit nihil eaque
+          labore, commodi odio eum facilis ipsam animi, ut obcaecati quisquam
+          tempore.
+        </p>
+        <br />
+        <p class="quote-author">Kayaba,Akihiko</p>
+        <p class="quote-job">Engineer</p>
+        <button class="btn btn-l">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="btn-icon"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M15 10a.75.75 0 01-.75.75H7.612l2.158 1.96a.75.75 0 11-1.04 1.08l-3.5-3.25a.75.75 0 010-1.08l3.5-3.25a.75.75 0 111.04 1.08L7.612 9.25h6.638A.75.75 0 0115 10z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <button class="btn btn-r">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="btn-icon"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <div class="dots">
+          <button class="dot open">&nbsp;</button>
+          <button class="dot">&nbsp;</button>
+          <button class="dot">&nbsp;</button>
+          <button class="dot">&nbsp;</button>
+        </div>
+      </blockquote>
+    </div>
+  </body>
+</html>
