@@ -1,1 +1,1 @@
-![](https://github.com/konentung/konentung/blob/output/github-snake.gif?raw=true)
+<img alt="GitHub Snake" src="https://raw.githubusercontent.com/konentung/konentung/refs/heads/output/github-snake.svg" />
