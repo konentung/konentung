@@ -10,27 +10,19 @@ jobs:
   generate-snake:
     runs-on: ubuntu-latest
     steps:
-      # 檢出儲存庫內容
-      - name: Checkout repository content
-        uses: actions/checkout@v2
-
-      # 生成蛇形遊戲動畫
-      - name: generate-snake-game-from-github-contribution-grid
-        uses: Platane/snk@v3.2.0
-        with:
+    - uses: actions/checkout@v2
+    - uses: Platane/snk@v3.2.0
+      with:
           # 你的 GitHub 使用者名稱
           github_user_name: konentung
-          # 生成的 .gif 圖檔存放位置
+          # 生成的 .gif 檔案存放位置
           gif_out_path: dist/github-snake.gif
-          # 生成的 .svg 圖檔存放位置
+          # 生成的 .svg 檔案存放位置
           svg_out_path: dist/github-snake.svg
-
-      # 部署到 GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2.5.0
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          # 使用 GitHub Token 進行部署
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: crazy-max/ghaction-github-pages@v2.5.0
+      with:
+        target_branch: output
+        build_dir: dist
+      env:
+         # 使用 GitHub Token 進行部署
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
