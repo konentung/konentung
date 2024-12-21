@@ -2,7 +2,7 @@ name: generate-snake
 
 on:
   schedule:
-    # 每 6 小时，执行一次
+    # 每 6 小時執行一次
     - cron: "0 */6 * * *"
   workflow_dispatch:
 
@@ -10,16 +10,21 @@ jobs:
   generate-snake:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: Platane/snk@master
+      - name: 檢出儲存庫內容
+        uses: actions/checkout@v2
+
+      - name: 生成蛇形動畫
+        uses: Platane/snk@v2
         with:
-          # 你的 GitHub 的名称
+          # 你的 GitHub 使用者名稱
           github_user_name: konentung
-          # 生成的 .gif 图存储的位置
+          # 生成的 .gif 圖檔存放位置
           gif_out_path: dist/github-snake.gif
-          # 生成的 .gif 图存储的位置
+          # 生成的 .svg 圖檔存放位置
           svg_out_path: dist/github-snake.svg
-      - uses: crazy-max/ghaction-github-pages@v2.5.0
+
+      - name: 部署到 GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2.5.0
         with:
           target_branch: output
           build_dir: dist
